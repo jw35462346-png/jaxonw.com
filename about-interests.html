@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interests — JAW</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600&family=Archivo:wght@400;500&display=swap');
+  :root{ --black:#0a0a0a; --white:#f5f5f2; --gold:#c9a24b; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{min-height:100vh;background:var(--black);color:var(--white);font-family:'Archivo',sans-serif;position:relative;display:flex;flex-direction:column;}
+  .frame{position:fixed;inset:26px;border:1px solid var(--gold);opacity:0.45;pointer-events:none;}
+  .corner{position:fixed;width:34px;height:34px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2;}
+  .corner.tl{top:26px;left:26px;} .corner.tr{top:26px;right:26px;transform:rotate(90deg);}
+  .corner.br{bottom:26px;right:26px;transform:rotate(180deg);} .corner.bl{bottom:26px;left:26px;transform:rotate(270deg);}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 2rem 3rem;position:relative;z-index:3;}
+
+  .page-title{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem, 6vw, 2.8rem);margin-bottom:0.5rem;text-align:center;}
+  .page-sub{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:2.5rem;text-align:center;}
+
+  .resume-body{width:100%;max-width:520px;}
+
+  .section-title{font-family:'Cinzel',serif;font-weight:600;font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:0 0 1.1rem;text-align:center;}
+  .section-title:not(:first-child){margin-top:3.2rem;}
+
+  .quote-block{border-left:2px solid var(--gold);padding-left:1.4rem;margin-bottom:1.4rem;text-align:left;}
+  .quote-block:last-child{margin-bottom:0;}
+  .quote-text{font-family:'Cinzel',serif;font-style:italic;font-size:1rem;line-height:1.6;color:var(--white);}
+  .quote-author{font-family:'Archivo',sans-serif;font-size:0.75rem;letter-spacing:0.08em;color:var(--gold);opacity:0.8;margin-top:0.5rem;}
+
+  .media-list{list-style:none;display:flex;flex-direction:column;gap:0.8rem;text-align:left;}
+  .media-list li{font-size:0.95rem;line-height:1.6;color:#d8d5cd;padding-left:1.2rem;position:relative;}
+  .media-list li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .media-list strong{color:var(--white);font-weight:500;}
+
+  .interests-list{display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;}
+  .interest-tag{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.05em;color:var(--gold);border:1px solid rgba(201,162,75,0.4);padding:0.65rem 1.3rem;}
+
+  .nav-buttons{margin-top:3.5rem;display:flex;align-items:center;justify-content:center;gap:1.4rem;}
+  .back{font-family:'Archivo',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8270;background:none;border:none;cursor:pointer;transition:color 0.3s ease;}
+  .back:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+  <div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner br"></div><div class="corner bl"></div>
+  <main>
+    <div class="page-title">Interests</div>
+    <div class="page-sub">What I'm Into</div>
+
+    <div class="resume-body">
+      <div class="interests-list">
+        <div class="interest-tag">Golf</div>
+        <div class="interest-tag">Hockey</div>
+        <div class="interest-tag">Motorcycles</div>
+        <div class="interest-tag">Skiing</div>
+        <div class="interest-tag">Web Design</div>
+        <div class="interest-tag">AI Tools</div>
+      </div>
+
+      <div class="section-title">Quotes</div>
+      <div class="quote-block">
+        <div class="quote-text">"Life responds to effort."</div>
+      </div>
+      <div class="quote-block">
+        <div class="quote-text">"If we're all gonna eat, someone has to sell."</div>
+      </div>
+      <div class="quote-block">
+        <div class="quote-text">"Who is this that obscures my plans with words without knowledge? Brace yourself like a man; I will question you, and you shall answer me."</div>
+        <div class="quote-author">— Job 38:2–3</div>
+      </div>
+
+      <div class="section-title">Music</div>
+      <ul class="media-list">
+        <li><strong>Drake</strong></li>
+        <li><strong>Russ</strong></li>
+        <li><strong>Gunna</strong></li>
+        <li><strong>Rainbow Kitten Surprise</strong></li>
+      </ul>
+
+      <div class="section-title">Books</div>
+      <ul class="media-list">
+        <li><strong>The 48 Laws of Power</strong></li>
+        <li><strong>The Hobbit</strong></li>
+        <li><strong>The Bible</strong></li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="back" onclick="window.location.href='about.html'">← Back</button>
+    </div>
+  </main>
+</body>
+</html>

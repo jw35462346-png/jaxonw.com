@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Ventures — JAW</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600&family=Archivo:wght@400;500&display=swap');
+  :root{ --black:#0a0a0a; --white:#f5f5f2; --gold:#c9a24b; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{min-height:100vh;background:var(--black);color:var(--white);font-family:'Archivo',sans-serif;position:relative;display:flex;flex-direction:column;}
+  .frame{position:fixed;inset:26px;border:1px solid var(--gold);opacity:0.45;pointer-events:none;}
+  .corner{position:fixed;width:34px;height:34px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2;}
+  .corner.tl{top:26px;left:26px;} .corner.tr{top:26px;right:26px;transform:rotate(90deg);}
+  .corner.br{bottom:26px;right:26px;transform:rotate(180deg);} .corner.bl{bottom:26px;left:26px;transform:rotate(270deg);}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;position:relative;z-index:3;}
+
+  .page-title{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem, 6vw, 2.6rem);margin-bottom:0.5rem;text-align:center;}
+  .page-sub{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:3rem;text-align:center;}
+
+  .ventures-body{width:100%;max-width:560px;}
+
+  .venture-card{border:1px solid rgba(201,162,75,0.35);padding:1.8rem 2.2rem;margin-bottom:1.4rem;text-align:center;transition:all 0.3s ease;}
+  .venture-card:hover{background:rgba(201,162,75,0.06);}
+  .venture-card:last-child{margin-bottom:0;}
+  .venture-name{font-family:'Cinzel',serif;font-weight:600;font-size:1.25rem;letter-spacing:0.03em;color:var(--gold);}
+  .venture-desc{font-size:0.94rem;line-height:1.8;color:#d8d5cd;margin:0;padding-left:1.1rem;}
+  .venture-desc li{margin-bottom:0.65rem;}
+  .venture-desc li:last-child{margin-bottom:0;}
+  .venture-desc strong{color:var(--white);font-weight:500;}
+
+  .nav-buttons{margin-top:3.5rem;display:flex;align-items:center;gap:1.4rem;}
+  .back{font-family:'Archivo',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8270;background:none;border:none;cursor:pointer;transition:color 0.3s ease;}
+  .back:hover{color:var(--gold);}
+  .next{font-family:'Archivo',sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1.5px solid var(--gold);padding:0.7rem 1.8rem;cursor:pointer;transition:all 0.3s ease;}
+  .next:hover{background:transparent;color:var(--gold);box-shadow:0 0 20px rgba(201,162,75,0.3);}
+</style>
+</head>
+<body>
+  <div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner br"></div><div class="corner bl"></div>
+  <main>
+    <div class="page-title">Business Ventures</div>
+    <div class="page-sub">What I'm Building</div>
+
+    <div class="ventures-body">
+      <div class="venture-card">
+        <div class="venture-name">Jawz Enterprises LLC</div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-name">Hazard Golf Company</div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-name">Premier Detailing</div>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-name">Cache Car Wash Express &amp; Detail</div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="back" onclick="window.location.href='about.html'">← Back</button>
+      <button class="next" onclick="window.location.href='about-resume.html'">Next →</button>
+    </div>
+  </main>
+</body>
+</html>

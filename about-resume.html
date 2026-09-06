@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — JAW</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600&family=Archivo:wght@400;500&display=swap');
+  :root{ --black:#0a0a0a; --white:#f5f5f2; --gold:#c9a24b; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{min-height:100vh;background:var(--black);color:var(--white);font-family:'Archivo',sans-serif;position:relative;display:flex;flex-direction:column;}
+  .frame{position:fixed;inset:26px;border:1px solid var(--gold);opacity:0.45;pointer-events:none;}
+  .corner{position:fixed;width:34px;height:34px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2;}
+  .corner.tl{top:26px;left:26px;} .corner.tr{top:26px;right:26px;transform:rotate(90deg);}
+  .corner.br{bottom:26px;right:26px;transform:rotate(180deg);} .corner.bl{bottom:26px;left:26px;transform:rotate(270deg);}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;padding:5rem 2rem 3rem;position:relative;z-index:3;}
+
+  .page-title{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem, 6vw, 2.8rem);margin-bottom:0.5rem;text-align:center;}
+  .role-line{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);opacity:0.9;text-align:center;margin-bottom:1rem;}
+  .contact-line{font-family:'Archivo',sans-serif;font-size:0.8rem;color:#8a8270;margin-bottom:3rem;text-align:center;letter-spacing:0.02em;}
+  .contact-line a{color:var(--gold);text-decoration:none;}
+  .contact-line a:hover{text-decoration:underline;}
+
+  .resume-body{width:100%;max-width:600px;}
+
+  .section-title{font-family:'Cinzel',serif;font-weight:600;font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:0 0 1.1rem;}
+  .section-title:not(:first-child){margin-top:3.2rem;}
+
+  .profile-text{font-size:0.98rem;line-height:1.85;color:#d8d5cd;}
+
+  .competency-list{list-style:none;display:grid;grid-template-columns:1fr;gap:0.7rem;}
+  .competency-list li{font-size:0.9rem;line-height:1.6;color:#d8d5cd;padding-left:1.2rem;position:relative;}
+  .competency-list li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+
+  .resume-block{border-left:2px solid var(--gold);padding-left:1.6rem;margin-bottom:2.4rem;}
+  .resume-block:last-child{margin-bottom:0;}
+  .resume-role{font-family:'Archivo',sans-serif;font-weight:500;font-size:1.1rem;color:var(--white);}
+  .resume-company{color:var(--gold);}
+  .resume-meta{font-family:'Cinzel',serif;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin:0.3rem 0 0.9rem;}
+  .resume-desc{font-size:0.92rem;line-height:1.8;color:#d8d5cd;margin:0;padding-left:1.1rem;}
+  .resume-desc li{margin-bottom:0.6rem;}
+  .resume-desc li:last-child{margin-bottom:0;}
+
+  .early-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+  .early-list li{font-size:0.9rem;line-height:1.6;color:#d8d5cd;padding-left:1.2rem;position:relative;}
+  .early-list li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .early-list strong{color:var(--white);font-weight:500;}
+  .early-list span{color:#8a8270;}
+
+  .edu-block{margin-bottom:1.1rem;}
+  .edu-block:last-child{margin-bottom:0;}
+  .edu-title{font-family:'Archivo',sans-serif;font-weight:500;font-size:0.95rem;color:var(--white);}
+  .edu-meta{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.06em;color:var(--gold);opacity:0.85;margin-top:0.25rem;}
+
+  .honors-list{list-style:none;display:flex;flex-direction:column;gap:0.8rem;}
+  .honors-list li{font-size:0.92rem;line-height:1.7;color:#d8d5cd;padding-left:1.3rem;position:relative;}
+  .honors-list li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+
+  .nav-buttons{margin-top:3.5rem;display:flex;align-items:center;gap:1.4rem;}
+  .back{font-family:'Archivo',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8270;background:none;border:none;cursor:pointer;transition:color 0.3s ease;}
+  .back:hover{color:var(--gold);}
+  .next{font-family:'Archivo',sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1.5px solid var(--gold);padding:0.7rem 1.8rem;cursor:pointer;transition:all 0.3s ease;}
+  .next:hover{background:transparent;color:var(--gold);box-shadow:0 0 20px rgba(201,162,75,0.3);}
+</style>
+</head>
+<body>
+  <div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner br"></div><div class="corner bl"></div>
+  <main>
+    <div class="page-title">Jaxon Wright</div>
+    <div class="role-line">Sales &amp; Operations Executive &nbsp;·&nbsp; Business Builder &amp; Owner-Operator</div>
+    <div class="contact-line">Jackson Hole, WY &nbsp;·&nbsp; 307-690-5254 &nbsp;·&nbsp; <a href="mailto:jaxon@jaxonw.com">jaxon@jaxonw.com</a></div>
+
+    <div class="resume-body">
+
+      <div class="section-title">Executive Summary</div>
+      <p class="profile-text">
+        Results-driven sales and operations leader with 12+ years of experience
+        building revenue-generating teams and running businesses end to end —
+        from door-to-door sales organizations to a $2.2M brick-and-mortar
+        acquisition and turnaround. Proven ability to recruit, train, and manage
+        sales forces of up to 30 reps, generate seven figures in downline
+        revenue, and take full ownership of daily operations, P&amp;L, and staff
+        management. Currently overseeing day-to-day operations, sales, and
+        merchandising for a luxury retail rug store. Track record of being
+        trusted with equity, profit-sharing, and executive titles (COO, CMO, VP
+        of Sales) within 18 months of joining an organization. Seeking to
+        leverage this operational and sales leadership background into
+        ownership and equity opportunities.
+      </p>
+
+      <div class="section-title">Core Competencies</div>
+      <ul class="competency-list">
+        <li>Team Recruiting &amp; Training</li>
+        <li>P&amp;L / Business Ownership</li>
+        <li>Direct &amp; B2B Sales Closing</li>
+        <li>Retail Operations &amp; Merchandising</li>
+        <li>Marketing, Branding &amp; Rebrand Strategy</li>
+        <li>CRM &amp; Sales Systems (Salesforce)</li>
+        <li>Territory Mapping &amp; Delegation</li>
+        <li>Financing / Credit Qualification</li>
+        <li>Contract Negotiation</li>
+        <li>Staff Management (up to 35+ employees)</li>
+        <li>Strategic Planning &amp; Forecasting</li>
+        <li>Carpentry &amp; Skilled Trade Labor</li>
+      </ul>
+
+      <div class="section-title">Professional Experience</div>
+
+      <div class="resume-block">
+        <div class="resume-role">Store Manager / Sales &nbsp;·&nbsp; <span class="resume-company">SVFR</span></div>
+        <div class="resume-meta">2025 – Present</div>
+        <ul class="resume-desc">
+          <li>Oversee full day-to-day operations of a luxury rug retail location, managing one direct employee and reporting to ownership.</li>
+          <li>Own the sales floor, Shopify e-commerce listings, product photography/Photoshop editing, and inventory management.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">General Laborer — Carpentry &amp; Metal Installation &nbsp;·&nbsp; <span class="resume-company">Storm Breaker Buildings</span></div>
+        <div class="resume-meta">Logan, UT &nbsp;·&nbsp; 2024</div>
+        <ul class="resume-desc">
+          <li>Performed precision carpentry and metal roof installation on post-frame and barndominium builds, often in 12-hour outdoor shifts.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Solar Sales Consultant / Inside Sales Representative &nbsp;·&nbsp; <span class="resume-company">Vivint Solar / NRG Energy</span></div>
+        <div class="resume-meta">Provo &amp; Clearfield, UT &nbsp;·&nbsp; 2021 – 2024</div>
+        <ul class="resume-desc">
+          <li>Cold-called Vivint's existing customer base and handled inbound leads, making 100–300 calls per day and building 50–70 custom solar proposals monthly.</li>
+          <li>Closed roughly 10 deals per month with deal sizes from $20,000–$130,000; generated $188K+ in monthly recurring revenue during peak periods.</li>
+          <li>Ran full sales cycle: home energy assessments, credit/financing qualification, installer selection, and permitting documentation.</li>
+          <li>Promoted from appointment setter to full Solar Consultant during peak season based on performance.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Customer Service Representative &nbsp;·&nbsp; <span class="resume-company">Vivint Smarthome</span></div>
+        <div class="resume-meta">Logan, UT &nbsp;·&nbsp; July 2021 – January 2022</div>
+        <ul class="resume-desc">
+          <li>Handled inbound relocation and account service calls, converting service calls into new insurance and upsell leads.</li>
+          <li>Maintained account accuracy and delivered end-to-end client support and scheduling.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Direct Sales Manager &nbsp;·&nbsp; <span class="resume-company">Massey Services, Inc. (Pest Control)</span></div>
+        <div class="resume-meta">Dallas–Fort Worth, TX &nbsp;·&nbsp; January 2021 – April 2021</div>
+        <ul class="resume-desc">
+          <li>Managed territory and direct-to-consumer sales for pest control contracts, sourcing and closing new leads.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Sales Team Manager &nbsp;·&nbsp; <span class="resume-company">Edge Pest Control</span></div>
+        <div class="resume-meta">Seattle, WA &nbsp;·&nbsp; January 2020 – June 2020</div>
+        <ul class="resume-desc">
+          <li>Trained and managed a 15-person door-to-door sales team, owning territory strategy and daily performance.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Door-to-Door Sales Representative &nbsp;·&nbsp; <span class="resume-company">Vivint Smarthome</span></div>
+        <div class="resume-meta">San Jose / Oakland, CA &nbsp;·&nbsp; 2019 – 2020</div>
+        <ul class="resume-desc">
+          <li>Sold customized home security packages ($1,500–$4,500) direct to homeowners, primarily closing on first visit.</li>
+          <li>Ran soft credit checks and structured 5-year service agreements with 0% financing; generated ~$5,100 in company revenue per sale.</li>
+          <li>Won the Division 1 Vivint CUP Championship — the top sales competition across the world's largest door-to-door company — and the VIPER Championship team title.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Team Leader / Area Sales Manager &nbsp;·&nbsp; <span class="resume-company">DishOne (Dish Network)</span></div>
+        <div class="resume-meta">Evansville, IN &nbsp;·&nbsp; 2018 – 2019</div>
+        <ul class="resume-desc">
+          <li>Recruited, trained, and managed a 25-rep sales team; arranged team housing and mapped canvassing territories.</li>
+          <li>Generated $255K+ in personal revenue and $5.4M in direct downline revenue; drove 800+ new customer contracts in a single summer.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Owner / Operator &amp; COO &nbsp;·&nbsp; <span class="resume-company">Cache Car Wash Express &amp; Detail</span></div>
+        <div class="resume-meta">Logan, UT &nbsp;·&nbsp; April 2016 – December 2016</div>
+        <ul class="resume-desc">
+          <li>One of five owners in the acquisition of a carwash appraised at $2.2M; co-managed daily operations for a staff of 35+.</li>
+          <li>Led a full equipment overhaul and facility remodel after discovering 70% of equipment needed replacement, managing the outside contractor relationship.</li>
+          <li>Directed rebrand and marketing strategy; more than doubled company revenue and quadrupled monthly membership sales within six months.</li>
+          <li>Recruited and trained a successor manager, then returned to a full-time strategic/operations role for the remainder of the ownership term.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">COO / CMO / VP of Sales &nbsp;·&nbsp; <span class="resume-company">Premier Detailing</span></div>
+        <div class="resume-meta">Logan, UT &nbsp;·&nbsp; 2015 – 2017</div>
+        <ul class="resume-desc">
+          <li>Held executive operating and marketing leadership across 3 locations, compensated via equity and profit-sharing.</li>
+          <li>Drove $750K+ in annual revenue generation as part of the executive leadership team.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Area Sales Manager / Team Lead &nbsp;·&nbsp; <span class="resume-company">Vantage Marketing</span></div>
+        <div class="resume-meta">New Haven, CT / Provo, UT &nbsp;·&nbsp; 2014 – 2017</div>
+        <ul class="resume-desc">
+          <li>Recruited, trained, and managed 20–30 door-to-door sales reps annually selling $500–$650 pest control contracts across 13+ states.</li>
+          <li>Built and ran a 25-rep team targeting 5,000 accounts and $2.7M in annual revenue; generated $260K in personal revenue and $1.2M in downline revenue in a single season.</li>
+          <li>Managed off-season recruiting/training cycles, employee housing logistics, and multi-tier commission payouts for a fully 1099 sales force.</li>
+          <li>Won the Vantage Marketing Survivor Cup — a company-wide, single-elimination sales tournament.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <div class="resume-role">Real Estate Project Manager &amp; Mentee &nbsp;·&nbsp; <span class="resume-company">Private Investor</span></div>
+        <div class="resume-meta">2014 – 2017</div>
+        <ul class="resume-desc">
+          <li>Completed a short real estate project management engagement generating $60K in revenue.</li>
+          <li>Served as a real estate mentee to a private investor, sourcing and negotiating rental properties for short-term rental arbitrage.</li>
+        </ul>
+      </div>
+
+      <div class="section-title">Additional Early Experience</div>
+      <ul class="early-list">
+        <li><strong>Car Salesman</strong> — Miller's Utah Carz <span>(2019 · $550K+ in total vehicles sold)</span></li>
+        <li><strong>Lawn &amp; Garden / Lumber Associate</strong> — Lowe's, Riverdale, UT <span>(2023)</span></li>
+        <li><strong>Car Detailer</strong> — Logan, UT <span>(2013)</span></li>
+        <li><strong>Trampoline Park Supervisor</strong> — Logan, UT <span>(2012)</span></li>
+        <li><strong>Injection Mold Machine Installer</strong> — Logan, UT <span>(2011)</span></li>
+        <li><strong>Machine Shop Assistant</strong> — Logan, UT <span>(2010)</span></li>
+        <li><strong>Newspaper Delivery</strong> — Herald Journal, Farr West, UT <span>(2008 · first job, 500+ papers weekly across 200+ households)</span></li>
+      </ul>
+
+      <div class="section-title">Markets I Have Sold Direct to Consumer In via Door-to-Door Canvassing</div>
+      <ul class="competency-list">
+        <li>San Jose, California</li>
+        <li>Everett, Washington</li>
+        <li>Las Vegas, Nevada</li>
+        <li>Salt Lake City, Utah</li>
+        <li>Boise, Idaho</li>
+        <li>Maple Grove, Minnesota</li>
+        <li>Evansville, Indiana</li>
+        <li>Owensboro, Kentucky</li>
+        <li>Mount Vernon, Illinois</li>
+        <li>New Haven, Connecticut</li>
+        <li>Albany, New York</li>
+        <li>Mahwah, New Jersey</li>
+        <li>Tempe, Arizona</li>
+        <li>Raleigh, North Carolina</li>
+        <li>Pittsburgh, Pennsylvania</li>
+        <li>Lewisville, Texas</li>
+      </ul>
+
+      <div class="section-title">Education</div>
+      <div class="edu-block">
+        <div class="edu-title">Sky View High School — High School Diploma, Honor Roll</div>
+        <div class="edu-meta">Smithfield, UT &nbsp;·&nbsp; 2013</div>
+      </div>
+      <div class="edu-block">
+        <div class="edu-title">Bridgerland Technical College — CNA Certification</div>
+        <div class="edu-meta">2013</div>
+      </div>
+
+      <div class="section-title">Awards &amp; Recognition</div>
+      <ul class="honors-list">
+        <li>Division 1 Vivint CUP Champion — top sales division, world's largest door-to-door sales company</li>
+        <li>Vivint VIPER Championship Team (2020)</li>
+        <li>Vantage Marketing Survivor Cup Winner — company-wide single-elimination sales tournament</li>
+        <li>Utah State Motocross Champion, Junior Class</li>
+        <li>Utah State Hockey All-Star; Senior Year Defenseman MVP &amp; Cleanest Player Award</li>
+      </ul>
+
+    </div>
+
+    <div class="nav-buttons">
+      <button class="back" onclick="window.location.href='about.html'">← Back</button>
+      <button class="next" onclick="window.location.href='hub.html'">Next →</button>
+    </div>
+  </main>
+</body>
+</html>

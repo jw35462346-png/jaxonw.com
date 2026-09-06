@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Me — JAW</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600&family=Archivo:wght@400;500&display=swap');
+  :root{ --black:#0a0a0a; --white:#f5f5f2; --gold:#c9a24b; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{min-height:100vh;background:var(--black);color:var(--white);font-family:'Archivo',sans-serif;position:relative;display:flex;flex-direction:column;}
+  .frame{position:fixed;inset:26px;border:1px solid var(--gold);opacity:0.45;pointer-events:none;}
+  .corner{position:fixed;width:34px;height:34px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2;}
+  .corner.tl{top:26px;left:26px;} .corner.tr{top:26px;right:26px;transform:rotate(90deg);}
+  .corner.br{bottom:26px;right:26px;transform:rotate(180deg);} .corner.bl{bottom:26px;left:26px;transform:rotate(270deg);}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;position:relative;z-index:3;text-align:center;}
+  .page-title{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem, 6vw, 2.8rem);margin-bottom:0.6rem;}
+  .page-sub{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:3rem;}
+  .contact-item{font-family:'Cinzel',serif;font-size:0.95rem;letter-spacing:0.06em;color:var(--white);margin-bottom:1rem;}
+  .contact-item a{color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.3s ease;}
+  .contact-item a:hover{border-bottom-color:var(--gold);}
+  .back{margin-top:3.5rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8270;background:none;border:none;cursor:pointer;transition:color 0.3s ease;}
+  .back:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+  <div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner br"></div><div class="corner bl"></div>
+  <main>
+    <div class="page-title">Contact Me</div>
+    <div class="page-sub">Let's Link</div>
+    <div class="contact-item">Email &nbsp;<a href="mailto:jaxon@jaxonw.com">jaxon@jaxonw.com</a></div>
+    <div class="contact-item">Phone &nbsp;<a href="tel:+13076905254">307-690-5254</a></div>
+    <div class="contact-item">Instagram &nbsp;<a href="https://instagram.com/jaxonalan2" target="_blank" rel="noopener">@jaxonalan2</a></div>
+    <div class="contact-item">Jackson Hole, Wyoming</div>
+    <a href="hub.html" style="text-decoration:none;"><button class="back">← Back</button></a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio — JAW</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;600&family=Archivo:wght@400;500&display=swap');
+  :root{ --black:#0a0a0a; --white:#f5f5f2; --gold:#c9a24b; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{min-height:100vh;background:var(--black);color:var(--white);font-family:'Archivo',sans-serif;position:relative;display:flex;flex-direction:column;}
+  .frame{position:fixed;inset:26px;border:1px solid var(--gold);opacity:0.45;pointer-events:none;}
+  .corner{position:fixed;width:34px;height:34px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);z-index:2;}
+  .corner.tl{top:26px;left:26px;} .corner.tr{top:26px;right:26px;transform:rotate(90deg);}
+  .corner.br{bottom:26px;right:26px;transform:rotate(180deg);} .corner.bl{bottom:26px;left:26px;transform:rotate(270deg);}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;padding:5rem 2rem 3rem;position:relative;z-index:3;}
+
+  .page-title{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem, 6vw, 2.6rem);margin-bottom:0.5rem;text-align:center;}
+  .page-sub{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:3rem;text-align:center;}
+
+  .bio-body{width:100%;max-width:560px;}
+  .bio-body p{font-size:1.02rem;line-height:1.9;color:#d8d5cd;margin-bottom:1.4rem;}
+  .bio-body p:last-child{margin-bottom:0;}
+
+  .bio-headline{font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:0.1em;color:var(--gold);text-align:center;margin:-2.2rem 0 2.6rem;line-height:1.7;}
+
+  .bio-heading{font-family:'Archivo Black',sans-serif;font-size:1.05rem;letter-spacing:0.01em;color:var(--white);margin:2.2rem 0 1.1rem;}
+
+  .bio-highlights{list-style:none;margin-bottom:1.4rem;}
+  .bio-highlights li{position:relative;padding-left:1.3rem;font-size:1.02rem;line-height:1.8;color:#d8d5cd;margin-bottom:1.2rem;}
+  .bio-highlights li:last-child{margin-bottom:0;}
+  .bio-highlights li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .bio-highlights li strong{color:var(--gold);font-weight:600;}
+
+  .bio-connect{border-top:1px solid rgba(201,162,75,0.35);margin-top:2.2rem;padding-top:1.6rem;font-size:1rem;line-height:1.8;color:#d8d5cd;}
+  .bio-connect strong{color:var(--gold);}
+
+  .nav-buttons{margin-top:3.5rem;display:flex;align-items:center;gap:1.4rem;}
+  .back{font-family:'Archivo',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8270;background:none;border:none;cursor:pointer;transition:color 0.3s ease;}
+  .back:hover{color:var(--gold);}
+  .next{font-family:'Archivo',sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1.5px solid var(--gold);padding:0.7rem 1.8rem;cursor:pointer;transition:all 0.3s ease;}
+  .next:hover{background:transparent;color:var(--gold);box-shadow:0 0 20px rgba(201,162,75,0.3);}
+</style>
+</head>
+<body>
+  <div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner br"></div><div class="corner bl"></div>
+  <main>
+    <div class="page-title">Bio</div>
+    <div class="page-sub">Jaxon Alan Wright</div>
+    <div class="bio-headline">Operator &nbsp;|&nbsp; Business Turnarounds &nbsp;|&nbsp; Sales Leadership &amp; Acquisitions</div>
+
+    <div class="bio-body">
+      <p>
+        Entrepreneur, team builder, and operational strategist with a track
+        record spanning competitive athletics, high-volume direct sales, and
+        turnaround business acquisitions. Driven by finding undervalued or
+        neglected assets, putting active ownership behind them, and building
+        scalable systems that last.
+      </p>
+
+      <div class="bio-heading">Core Highlights &amp; Track Record</div>
+      <ul class="bio-highlights">
+        <li><strong>Business Turnarounds &amp; Operations:</strong> Co-acquired a neglected 120-foot tunnel car wash and mobile detailing company in northern Utah. Spearheaded a full facility overhaul, tunnel equipment restoration, and complete rebrand. Within six months, doubled gross revenue, quadrupled recurring monthly memberships, and transitioned operations from owner-operator to self-sustaining.</li>
+        <li><strong>Sales Leadership &amp; Scaling:</strong> Multi-year leader with Vantage Marketing across the Northeast (CT &amp; NY). Advanced from direct door-to-door canvassing to recruiting, training, and managing a 25-person sales force selling annual service agreements.</li>
+        <li><strong>Real Estate Acquisitions &amp; Due Diligence:</strong> Mentored under a former NASA engineer in off-market acquisitions, wholesale transactions, and fix-and-flip strategies. Sourced deals, negotiated purchase contracts, and led property due diligence and repair budgeting.</li>
+        <li><strong>Competitive Foundation:</strong> Sky View High School graduate (3.8 GPA), Utah State High School Hockey All-Star (12-5 win), and Utah State 250cc Motocross Champion.</li>
+      </ul>
+
+      <p>
+        Outside of business, I spend my time on the golf course, on a
+        motorcycle, or chasing powder in Jackson Hole.
+      </p>
+
+      <div class="bio-connect"><strong>Let's Connect:</strong> Open to discussing small business acquisitions, operational partnerships, and new ventures.</div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="back" onclick="window.location.href='about.html'">← Back</button>
+      <button class="next" onclick="window.location.href='about-ventures.html'">Next →</button>
+    </div>
+  </main>
+</body>
+</html>
